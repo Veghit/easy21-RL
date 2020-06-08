@@ -112,7 +112,7 @@ class Agent:
         # Add a color bar which maps values to colors.
         fig.colorbar(surf, shrink=0.5, aspect=5)
         ax.view_init(15, 120)
-        plt.savefig(open(title + ".svg", "wb"), format="svg")
+        plt.savefig(open("imgs\\"+title + ".svg", "wb"), format="svg")
         if show_result:
             plt.show()
         return
@@ -442,7 +442,7 @@ def Q3(MCC, linear_approximation=False):
     ax.set_xlabel("SARSA(Lambda) - Lambda value")
     ax.set_ylabel("MSE after 1000 episodes")
     ax.plot(lambdas, mses)
-    plt.savefig(open("SARSA_mse_vs_lambda_approx_" + str(linear_approximation) + ".svg", "wb"), format="svg")
+    plt.savefig(open("imgs\SARSA_mse_vs_lambda_approx_" + str(linear_approximation) + ".svg", "wb"), format="svg")
 
     for l in [0, 1]:
         if linear_approximation:
@@ -461,7 +461,7 @@ def Q3(MCC, linear_approximation=False):
             ax.set_ylabel("MSE")
             ax.plot(episodes, mse_l)
             plt.savefig(
-                open("SARSA_mse_vs_episode_lambda_" + str(int(l)) + "_approx_" + str(linear_approximation) + ".svg",
+                open("imgs\\"+"SARSA_mse_vs_episode_lambda_" + str(int(l)) + "_approx_" + str(linear_approximation) + ".svg",
                      "wb"),
                 format="svg")
 
